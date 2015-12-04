@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\BeastMain.cpp" />
+    <ClCompile Include="Source\Camera.cpp" />
+    <ClCompile Include="Source\cAnimationController.cpp" />
+    <ClCompile Include="Source\Character.cpp" />
+    <ClCompile Include="Source\Collider.cpp" />
+    <ClCompile Include="Source\CollisionManager.cpp" />
+    <ClCompile Include="Source\Effects.cpp" />
+    <ClCompile Include="Source\FontSheet.cpp" />
+    <ClCompile Include="Source\FreeCam.cpp" />
+    <ClCompile Include="Source\FX\BasicEffect.cpp" />
+    <ClCompile Include="Source\FX\Effect.cpp" />
+    <ClCompile Include="Source\FX\NormalMapEffect.cpp" />
+    <ClCompile Include="Source\FX\SkyEffect.cpp" />
+    <ClCompile Include="Source\FX\SpriteEffect.cpp" />
+    <ClCompile Include="Source\FX\TerrainEffect.cpp" />
+    <ClCompile Include="Source\GameTimer.cpp" />
+    <ClCompile Include="Source\Helper.cpp" />
+    <ClCompile Include="Source\Init.cpp" />
+    <ClCompile Include="Source\Level.cpp" />
+    <ClCompile Include="Source\Level0.cpp" />
+    <ClCompile Include="Source\LevelManager.cpp" />
+    <ClCompile Include="Source\Meshes\BasicModel.cpp" />
+    <ClCompile Include="Source\Meshes\MeshGeometry.cpp" />
+    <ClCompile Include="Source\Meshes\SkinnedData.cpp" />
+    <ClCompile Include="Source\Meshes\SkinnedModel.cpp" />
+    <ClCompile Include="Source\ModelLoader.cpp" />
+    <ClCompile Include="Source\Object3D.cpp" />
+    <ClCompile Include="Source\ObjectManager.cpp" />
+    <ClCompile Include="Source\Objects\Box.cpp" />
+    <ClCompile Include="Source\Objects\Grid.cpp" />
+    <ClCompile Include="Source\Objects\ShapeGenerator.cpp" />
+    <ClCompile Include="Source\Objects\Skybox.cpp" />
+    <ClCompile Include="Source\Objects\Terrain.cpp" />
+    <ClCompile Include="Source\RenderStates.cpp" />
+    <ClCompile Include="Source\SpriteBatch.cpp" />
+    <ClCompile Include="Source\TextManager.cpp" />
+    <ClCompile Include="Source\Texture.cpp" />
+    <ClCompile Include="Source\TextureMgr.cpp" />
+    <ClCompile Include="Source\Vertex.cpp" />
+    <ClCompile Include="Source\xnacollision.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\BeastMain.h" />
+    <ClInclude Include="Source\Camera.h" />
+    <ClInclude Include="Source\cAnimationController.h" />
+    <ClInclude Include="Source\Character.h" />
+    <ClInclude Include="Source\Collider.h" />
+    <ClInclude Include="Source\CollisionManager.h" />
+    <ClInclude Include="Source\FontSheet.h" />
+    <ClInclude Include="Source\FreeCam.h" />
+    <ClInclude Include="Source\FX\NormalMapEffect.h" />
+    <ClInclude Include="Source\FX\SkyEffect.h" />
+    <ClInclude Include="Source\FX\SpriteEffect.h" />
+    <ClInclude Include="Source\FX\TerrainEffect.h" />
+    <ClInclude Include="Source\Helper.h" />
+    <ClInclude Include="Source\d3dx11effect.h" />
+    <ClInclude Include="Source\Effects.h" />
+    <ClInclude Include="Source\Enums.h" />
+    <ClInclude Include="Source\FX\BasicEffect.h" />
+    <ClInclude Include="Source\FX\Effect.h" />
+    <ClInclude Include="Source\GameTimer.h" />
+    <ClInclude Include="Source\Init.h" />
+    <ClInclude Include="Source\Level.h" />
+    <ClInclude Include="Source\Level0.h" />
+    <ClInclude Include="Source\LevelManager.h" />
+    <ClInclude Include="Source\Meshes\BasicModel.h" />
+    <ClInclude Include="Source\Meshes\MeshGeometry.h" />
+    <ClInclude Include="Source\Meshes\SkinnedData.h" />
+    <ClInclude Include="Source\Meshes\SkinnedModel.h" />
+    <ClInclude Include="Source\ModelLoader.h" />
+    <ClInclude Include="Source\Object3D.h" />
+    <ClInclude Include="Source\ObjectManager.h" />
+    <ClInclude Include="Source\Objects\Box.h" />
+    <ClInclude Include="Source\Objects\Grid.h" />
+    <ClInclude Include="Source\Objects\ShapeGenerator.h" />
+    <ClInclude Include="Source\Objects\Skybox.h" />
+    <ClInclude Include="Source\Objects\Terrain.h" />
+    <ClInclude Include="Source\RenderStates.h" />
+    <ClInclude Include="Source\resource.h" />
+    <ClInclude Include="Source\SpriteBatch.h" />
+    <ClInclude Include="Source\Structs.h" />
+    <ClInclude Include="Source\TextManager.h" />
+    <ClInclude Include="Source\Texture.h" />
+    <ClInclude Include="Source\TextureMgr.h" />
+    <ClInclude Include="Source\Vertex.h" />
+    <ClInclude Include="Source\xnacollision.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Source\BeastRes.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Shaders\Basic.fx">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc /Fc /Od /Zi /T fx_5_0 /Fo "%(RelativeDir)\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)\%(Filename).fxo</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">fxc /T fx_5_0 /Fo "%(RelativeDir)\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)\%(Filename).fxo</Outputs>
+    </CustomBuild>
+    <None Include="..\README.md" />
+    <None Include="Shaders\LightHelper.fx" />
+    <CustomBuild Include="Shaders\Sky.fx">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc /Fc /Od /Zi /T fx_5_0 /Fo "%(RelativeDir)\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)\%(Filename).fxo</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">fxc /T fx_5_0 /Fo "%(RelativeDir)\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)\%(Filename).fxo</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Shaders\Terrain.fx">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc /Fc /Od /Zi /T fx_5_0 /Fo "%(RelativeDir)\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)\%(Filename).fxo</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">fxc /T fx_5_0 /Fo "%(RelativeDir)\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)\%(Filename).fxo</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Shaders\NormalMap.fx">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc /Fc /Od /Zi /T fx_5_0 /Fo "%(RelativeDir)\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)\%(Filename).fxo</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">fxc /T fx_5_0 /Fo "%(RelativeDir)\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)\%(Filename).fxo</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Shaders\Sprite.fx">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc /Fc /Od /Zi /T fx_5_0 /Fo "%(RelativeDir)\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)\%(Filename).fxo</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)\%(Filename).fxo</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">fxc /T fx_5_0 /Fo "%(RelativeDir)\%(Filename).fxo" "%(FullPath)"</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{26F3FC8D-0570-4F83-9B9B-13C0B734C4B4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Beast</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <SourcePath>Source\;$(SourcePath)</SourcePath>
+    <LibraryPath>Libs\assimp\Lib\x86\Debug;Source\;$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>Libs\assimp\Include;$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <ExecutablePath>$(DXSDK_DIR)Utilities\bin\x86;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <SourcePath>Source;$(SourcePath)</SourcePath>
+    <IncludePath>Libs\assimp\Include;$(DXSDK_DIR)Include;c:\program files\windows kits\8.0\include\shared\;$(IncludePath)</IncludePath>
+    <LibraryPath>Libs\assimp\Lib\x86\Release;$(DXSDK_DIR)Lib\x86;Source\;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;FBXSDK_SHARED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Effects11d.lib;d3d11.lib;d3dx11d.lib;D3DCompiler.lib;dxerr.lib;dxgi.lib;dxguid.lib;%(AdditionalDependencies);assimpd.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>Source\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;FBXSDK_SHARED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Effects11.lib;d3d11.lib;d3dx11.lib;D3DCompiler.lib;dxerr.lib;dxgi.lib;dxguid.lib;%(AdditionalDependencies);assimp.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>Source\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
